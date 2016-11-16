@@ -1,5 +1,5 @@
 require.config({
-  baseUrl: "./js/",
+  baseUrl: './js/',
   paths: {
     jquery:                     'lib/jquery-1.8.2',
     underscore:                 'lib/underscore-1.8.3',
@@ -18,7 +18,7 @@ require.config({
   },
   shim: {
     underscore: {
-      exports: "_"
+      exports: '_'
     },
     backbone: {
       deps: ['underscore', 'jquery'],
@@ -50,25 +50,29 @@ define([
     
     var Router = Backbone.Router.extend({
         routes: {
-          "": "main"
+          '':      'main',
+          'saved': 'saved'
         },
 
         main: function(){
-          console.log('main');
           var that = this;
           var articles = new Articles([]);
 
           articles.fetch({
-            dataType: "jsonp",
-            jsonpCallback: "top_pages_callback",
+            dataType: 'jsonp',
+            jsonpCallback: 'top_pages_callback',
             success: function(collection, response, options){
               var masterView = new MasterView({collection: collection});
-              $("#container").html(masterView.render().el);
+              $('#container').html(masterView.render().el);
             },
             error: function(collection, response, options) {
               console.log(response.resonse_text);
             },
           });
+        },
+
+        saved: function() {
+            console.log('saved');
         }
     });
     
