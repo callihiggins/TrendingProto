@@ -1,6 +1,6 @@
 define(['backbone.giraffe.contrib', 
         'views/article',
-        'stache!articles'
+        'stache!templates/articles'
   ], function(GiraffeContrib, ArticleView, template) {
     var ArticlesList   = GiraffeContrib.CollectionView.extend({
       modelView:        ArticleView,

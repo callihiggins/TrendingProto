@@ -13,11 +13,7 @@ require.config({
   },
   config: {
     'stache': {
-        extension: '.mustache',
-      //  path: '/templates/'
-    },
-    'text': {
-      //  path: '/templates/'
+        extension: '.mustache'
     }
   },
   shim: {
